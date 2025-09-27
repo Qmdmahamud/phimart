@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.core.validators import MinValueValidator,MaxValueValidator,FileExtensionValidator
 from product.validators import validate_file_size
+from cloudinary.models import CloudinaryField
 # Create your models here.
 class Category(models.Model):
     name=models.CharField(max_length=100)
@@ -15,6 +16,7 @@ class Product(models.Model):
     description=models.TextField()
     price=models.DecimalField(max_digits=10,decimal_places=2)
     stock=models.PositiveIntegerField()
+    image=CloudinaryField('image')
     # image=models.ImageField(upload_to="product/images/",blank=True,null=True)
     category=models.ForeignKey(
         Category,on_delete=models.CASCADE,

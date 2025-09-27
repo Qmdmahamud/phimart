@@ -25,6 +25,7 @@ class CategorySerializer(serializers.ModelSerializer):
         count=Product.objects.filter(category=category).count()
         return count
 class ProductImagesSerializer(serializers.ModelSerializer):
+    image=serializers.ImageField()
     class Meta:
         model=ProductImage
         fields=['id','image']  
@@ -35,6 +36,7 @@ class ProductImagesSerializer(serializers.ModelSerializer):
     #     return product
 
 class ProductSerializer(serializers.ModelSerializer):
+
     images=ProductImagesSerializer(many=True,read_only=True)
     class Meta:
         model=Product

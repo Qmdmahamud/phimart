@@ -46,7 +46,7 @@ class ProductViewSet(ModelViewSet):
     )
     def list(self,request,*args, **kwargs):
         """Retrive all the create product"""
-        return super().list(request,**args, **kwargs)
+        return super().list(request,*args, **kwargs)
     
     @swagger_auto_schema(
             operation_summary="Create a product by admin",
