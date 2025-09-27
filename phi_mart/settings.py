@@ -104,11 +104,11 @@ WSGI_APPLICATION = 'phi_mart.wsgi.app'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('dbname'),
-        'USER': config('user'),
-        'PASSWORD': config('password'),
-        'HOST': config('host'),
-        'PORT': config('port')
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST'),
+        'PORT': config('DB_PORT')
     }
 }
 
@@ -137,9 +137,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Configuration       
 cloudinary.config( 
-    cloud_name = config('cloud_name'), 
-    api_key = config('cloudinary_api_key'), 
-    api_secret = config('api_secret'), # Click 'View API Keys' above to copy your API secret
+    cloud_name = config('CLOUD_NAME'), 
+    api_key = config('CLOUDINARY_API_KEY'), 
+    api_secret = config('CLOUDINARY_API_SECRET'), # Click 'View API Keys' above to copy your API secret
     secure=True
 )
 
