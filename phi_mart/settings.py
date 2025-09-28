@@ -107,7 +107,7 @@ DATABASES = {
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'),
+        'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT')
     }
 }
@@ -139,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 cloudinary.config( 
     cloud_name = config('CLOUD_NAME'), 
     api_key = config('CLOUDINARY_API_KEY'), 
-    api_secret = config('CLOUDINARY_API_SECRET'), # Click 'View API Keys' above to copy your API secret
+    api_secret = config('API_SECRET'), # Click 'View API Keys' above to copy your API secret
     secure=True
 )
 
